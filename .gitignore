@@ -1,2 +1,9 @@
+# Ignore Node Modules
 node_modules
+
+# Ignore IDE config
+.vscode
+
+# Ignore Files folder and ENV variables
+files
 .env
