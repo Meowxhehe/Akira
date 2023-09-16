@@ -4,35 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akīra</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="Akīra.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/Akīra.png" type="image/x-icon">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
-    <progress max="100" value="0"></progress>
-    &emsp;
-    <button>+</button>
-    <script>
-        const button = document.querySelector('button')
-        const progressBar = document.querySelector('progress')
-
-        button.onclick = async () => {
-            const [fileHandle] = await showOpenFilePicker()
-
-            const file = await fileHandle.getFile()
-            const formData = new FormData()
-            formData.append('file', file)
-
-            const xhr = new XMLHttpRequest({
-
-            })
-            xhr.open('POST', '/upload', true)
-            xhr.upload.onprogress = e => {
-                if (!e.lengthComputable) return
-                const percentComplete = (e.loaded / e.total) * 100
-                progressBar.value = percentComplete
-            }
-            xhr.send(formData)
-        } 
-    </script>
+    <progress max="100" value="0" hidden></progress>
+    <br>
+    <button>
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        &nbsp; Choose File To Upload
+    </button>
 </body>
 </html>
